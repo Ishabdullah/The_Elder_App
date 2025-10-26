@@ -29,7 +29,10 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x ./gradlew
 
-      - name: Build APK
+      - name: Clean Gradle build
+        run: ./gradlew clean
+
+      - name: Build smollm release APK
         run: ./gradlew :smollm:assembleRelease --stacktrace
 
       - name: Upload APK artifact
