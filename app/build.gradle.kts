@@ -17,3 +17,6 @@ android {
         }
     }
 }
+dependencies {
+    implementation(kotlin("stdlib"))
+}
