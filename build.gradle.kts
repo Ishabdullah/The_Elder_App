@@ -1,11 +1,14 @@
 plugins {
+    kotlin("jvm") version "1.9.0"
     id("com.android.application") version "8.2.0"
     id("org.jetbrains.kotlin.android") version "1.9.0"
     id("com.google.devtools.ksp") version "1.9.0-1.0.13"
 }
 
 android {
+    namespace = "io.shubham0204.smollmandroid" // <-- critical fix
     compileSdk = 34
+
     defaultConfig {
         applicationId = "io.shubham0204.smollmandroid"
         minSdk = 24
@@ -26,5 +29,5 @@ android {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.0")
+    implementation(kotlin("stdlib"))
 }
