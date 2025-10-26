@@ -1,10 +1,30 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
-    alias(libs.plugins.android.application) apply false
-    alias(libs.plugins.kotlin.android) apply false
-    alias(libs.plugins.kotlin.compose) apply false
-    alias(libs.plugins.android.library) apply false
-    id("com.google.devtools.ksp") version "2.0.0-1.0.24" apply false
-    alias(libs.plugins.jetbrains.kotlin.jvm) apply false
-    kotlin("plugin.serialization") version "2.1.0" apply false
+    id("com.android.application") version "8.2.0"
+    id("org.jetbrains.kotlin.android") version "1.9.0"
+    id("com.google.devtools.ksp") version "1.9.0-1.0.13"
+}
+
+android {
+    compileSdk = 34
+    defaultConfig {
+        applicationId = "io.shubham0204.smollmandroid"
+        minSdk = 24
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0"
+    }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+    }
+}
+
+dependencies {
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.0")
 }
